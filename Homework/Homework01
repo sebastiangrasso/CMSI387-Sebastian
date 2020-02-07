@@ -47,7 +47,7 @@ Homework01 (02/05/2020)
   
   Shortest Job First = Shortest AVG Turnaround
   
-  7)'''c
+  7)```c
   #include <stdio.h>
 
 int main(int argc, const char * argv[]) {
@@ -81,6 +81,6 @@ int main(int argc, const char * argv[]) {
 
     return 0;
 }
-'''
+```
   
   
