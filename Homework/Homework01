@@ -16,17 +16,70 @@ Homework01 (02/05/2020)
 5) Yes, running the two threads concurrently will allow the sleeping thread to print a message after every sleep cycle, while the enter key has not been pressed. On an enter press, the main thread can immediately kill the second thread, preventing the cyclic message
 
 6)[ T1 ][  T2  ][   T3   ]
-  0     1      3         6
+  0     1       3        6
+  
+  t1=1, t2=3, t3=6, AVG= 10/3
   
   [ T1 ][   T3   ][  T2  ]
-  0     1        4       6
+  0     1         4      6
 
+  t1=1, t2=6, t3=4, AVG= 11/3
+  
   [  T2  ][ T1 ][   T3   ]
-  0       2     3       6
+  0       2     3        6
+  
+  t1=3, t2=2, t3=6, AVG= 11/3
   
   [  T2  ][   T3   ][ T1 ]
-  0     1        4      6
-
+  0       2        5     6
   
+  t1=6, t2=2, t3=5, AVG= 13/3
+
+  [   T3   ][ T1 ][  T2  ]
+  0         3     4      6
+  
+  t1=4, t2=6, t3=3, AVG= 13/3
+  
+  [   T3   ][  T2  ][ T1 ]
+  0         3       5    6
+
+  t1=3, t2=5, t3=6, AVG= 14/3
+  
+  Shortest Job First = Shortest AVG Turnaround
+  
+  7)'''#include <stdio.h>
+
+int main(int argc, const char * argv[]) {
+    
+    char name[60];
+    int age;
+    int classYear;
+    char major[50];
+    char nationality[50];
+    char birthdate[10];
+    
+    printf("What is your name? ");
+    scanf("%s", &name);
+    
+    printf("What is your age? ");
+    scanf("%d", &age);
+    
+    printf("What is your class year? ");
+    scanf("%d", &classYear);
+    
+    printf("What is your major? ");
+    scanf("%s", &major);
+    
+    printf("What is your nationality? ");
+    scanf("%s", &nationality);
+    
+    printf("What is your dirthdate (Form MM/DD/YYYY)? ");
+    scanf("%s", &birthdate);
+    
+    printf("Name: %s \n Age: %d \n Class Year: %d \n Major: %s \n Nationality: %s \n Birthdate: %s \n", name, age, classYear, major, nationality, birthdate);
+
+    return 0;
+}
+'''
   
   
