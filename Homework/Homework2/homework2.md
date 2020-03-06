@@ -1,6 +1,6 @@
 # Homework 2
 1. Reversing the steps and unlocking the spinlock before removing the current thread is dangerous because it can result in the the thread running multiple times. It's possible that the if the thread isn't removed prior to unlocking the mutex, the thread will run in an infinite loop. 
-2. It is important that the program gets the values of seatsRemaining and cashOnHand from the same snapshot. If the audit occurs in the middle of ticket puchasing transaction, then the values may come from different states and the audit will by buggy because the cashOnHand and seatsRemaining values may not coincide.
+2. It is important that the program gets the values of seatsRemaining and cashOnHand from the same snapshot, which is handled by the line "State snapshot = state.get()". If the audit occurs in the middle of ticket puchasing transaction, then the values may come from different states and the audit will by buggy because the cashOnHand and seatsRemaining values may not coincide.
 3. [BoundedBufferTest]()
 4. [ModifiedBounderBuffer]()
 5. ⋅⋅* The undo log of two phase locking makes it possible for T2 to see the old value of x and the new value of y. Every time a new value is written, the undo log stores actions necessary to revert back to the original state.
