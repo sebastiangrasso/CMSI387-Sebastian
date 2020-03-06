@@ -1,8 +1,8 @@
 # Homework 2
 1. Reversing the steps and unlocking the spinlock before removing the current thread is dangerous because it can result in the the thread running multiple times. It's possible that the if the thread isn't removed prior to unlocking the mutex, the thread will run in an infinite loop. 
 2. It is important that the program gets the values of seatsRemaining and cashOnHand from the same snapshot, which is handled by the line "State snapshot = state.get()". If the audit occurs in the middle of ticket puchasing transaction, then the values may come from different states and the audit will by buggy because the cashOnHand and seatsRemaining values may not coincide.
-3. [BoundedBufferTest]()
-4. [ModifiedBounderBuffer]()
+3. [BoundedBufferTest](https://github.com/sebastiangrasso/CMSI387-Sebastian/blob/master/Homework/Homework2/BoundedBufferTest.java)
+4. [ModifiedBounderBuffer](https://github.com/sebastiangrasso/CMSI387-Sebastian/blob/master/Homework/Homework2/ModBoundedBuffer.java)
 5. 
     * The undo log of two phase locking makes it possible for T2 to see the old value of x and the new value of y. Every time a new value is written, the undo log stores actions necessary to revert back to the original state.
     * It is possible using read committed isolation level with short read locks because transactions only reading data have easy access to the shared lock that they release after each read. Even though writing holds the lock, read operations can easily access it and guarentee that the information they are reading is committed, or not still being written. 
