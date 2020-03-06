@@ -13,12 +13,13 @@
 7. Since each page directory points to 1024 page table entries, and each page table entry can point to 1024 page frames, the last entry in the page directory would start at 1024*1023, or 1047552 (We use 1023 because page directory indexing begins at 0). 1047553 is next page we can access, one index over. 
 8. First I declared an array of chars of size equal to the integer entered on the command line. Then using the time C library, I declared a clock to start at the begining of a for loop traversing this array and print the time when the last 4096th element was accessed. Then I began testing the program with different array sizes from the Mac terminal. I began with an arbitrary 10,000,000, which causes a seg fault. Then after a little stack overflow research and testing, I determined the largest array size I could use was one of 8384944, where the loop up time for the last element was .066827. I continued this process, halving the size each time.
 
-Size    - last eligible look up time
-8384944 - 0.66827
-4192472 - 0.33689
-2093236 - 0.16259
-1048118 - 0.08474
-524059  - 0.004458
+|Size    | last eligible look up time |
+| ------ | ------  |
+|8384944 | 0.66827 |
+|4192472 | 0.33689 |
+|2093236 | 0.16259 |
+|1048118 | 0.08474 |
+|524059  | 0.004458 |
 
 After a little more testing between the range [524059 - 1048118], I found the time increases a huge amount around array sizes of ~1034059 and then continue to increase linearly. 
 9. There are 8 processes running. 
