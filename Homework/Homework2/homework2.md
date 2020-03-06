@@ -22,5 +22,6 @@
 |524059  | 0.004458 |
 
 After a little more testing between the range [524059 - 1048118], I found the time increases a huge amount around array sizes of ~1034059 and then continue to increase linearly. 
+
 9. There are 8 processes running. 
-[family tree]: 
+[family tree]: https://github.com/sebastiangrasso/CMSI387-Sebastian/blob/master/Homework/Homework2/IMG_1533%20(1).jpg
