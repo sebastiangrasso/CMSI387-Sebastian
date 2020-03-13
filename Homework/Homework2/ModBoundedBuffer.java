@@ -1,4 +1,5 @@
-public class ModifiedBoundedBuffer {
+// public class ModifiedBoundedBuffer {
+public class ModBoundedBuffer {
   private Object[] buffer = new Object[20]; // arbitrary size
   private int numOccupied = 0;
   private int firstOccupied = 0;
@@ -8,12 +9,12 @@ public class ModifiedBoundedBuffer {
    * buffer.length buffer[(firstOccupied + i) % buffer.length] contains the
    * (i+1)th oldest entry, for all i such that 0 <= i < numOccupied
    */
- 
- 
+
+
 public synchronized void insert(Object o) throws InterruptedException {
     if (numOccupied == 0)
       notifyAll();
-    
+
     while (numOccupied == buffer.length)
       // wait for space
       wait();

@@ -1,0 +1,60 @@
+
+
+CMSI 387 Operating Systems
+Results for Homework #2 Evaluation
+   Sebastian
+==================================
+
+Question 1 mutex reversing:          5/ 5 points
+
+Question 2 auditing code change:     5/ 5 points
+
+Question 3 test program:            15/20 points
+   You have the test program, but no BoundedBuffer.java file so I can see
+      if it works.  Also, you had a compile error in the initial code.
+      Sorry, but that costs you points...
+
+Question 4 notifyall() addition:    5/10 points
+   The naming convention of the file caused a compile error on the command
+      line.  I fixed that for you.  However, there's no main() method so
+      I can't run the file to see if it works, either.
+      Sorry, but that costs you points.....
+
+Question 5a 2-phase locking:         4/ 5 points
+   No, it's not possible.  With two-phase locking, one transaction runs at
+      a time, so T1 will run, change both values, then T2 will run and read
+      the new values.
+
+Question 5b short read locks:        4/ 5 points
+   No, it's not possible.  With read committed isolation, the writes will
+      have exlusive locks, so T1 will have exclusive write access for the
+      duration of the transaction.  Since write locks are exclusive, in this
+      case it's the same outcome as with two-phase locking.
+
+Question 5c snapshot isolation:      4/ 5 points
+   Yes, it's possible.  With snapshot isolation, the values are written to
+      DIFFERENT locations than the original storage, and then later written
+      to the original location.  If T2 reads x before that update write is
+      done, and reads y AFTER that update write is done, it would have two
+      inconsistent values, the new value for x and the old value for y.
+
+Question 6 virtual address xlate:    5/ 5 points
+   Actually the virtuals are 12288 through 16380, but you were only off by
+      one, so close enough!
+
+Question 7 calc. explanation:        5/ 5 points
+
+Question 8 loop 4096 analysis:      20/20 points
+   Nice write up on this one!
+
+Question 9 fork() tree:             15/15 points
+   In this kind of situation it's helpful to use the PID's to help show
+      the hierarchy, but you got the idea and the tree is correct.
+
+Total 87 out of 100 = 87.00% which is a B-plus
+
+Comments:
+---------
+
+Very nice work on this assignment!
+
